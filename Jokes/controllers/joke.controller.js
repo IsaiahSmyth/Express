@@ -46,7 +46,7 @@ module.exports = {
     },
 
     deleteJoke: (req, res) =>{
-        Joke.deleteOne({_id: req.params.id})
+        Joke.findOneAndDelete({_id: req.params.id})
         .then(joke =>{
             res.json(joke)
         })
